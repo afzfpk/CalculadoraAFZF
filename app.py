@@ -7,9 +7,9 @@ st.title("Calculadora de Gestão de Banca - AFZF")
 st.subheader("Gerencia a tua banca de apostas de forma inteligente!")
 
 # Inputs para o valor da banca, valor para COR e valor para Empate
-total_banca = st.number_input("Valor total da tua banca (€):", min_value=0, value=200)
-valor_cor = st.number_input("Valor para a COR (€):", min_value=0, value=6.00)
-valor_empate = st.number_input("Valor para Empate (€):", min_value=0, value=0.60)
+total_banca = st.number_input("Valor total da tua banca (€):", min_value=0.0, value=200.0, step=0.01)
+valor_cor = st.number_input("Valor para a COR (€):", min_value=0.0, value=6.00, step=0.01)
+valor_empate = st.number_input("Valor para Empate (€):", min_value=0.0, value=0.60, step=0.01)
 
 # Cálculos para Stop Win e Stop Loss, adaptando a tua lógica
 stop_win = total_banca * 0.09  # Exemplo: 9% da banca para Stop WIN

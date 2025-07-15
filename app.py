@@ -55,7 +55,7 @@ else:
 
 # Gráfico de Evolução da Banca (Simulação)
 st.markdown("### 4. Gráfico de Evolução da Banca")
-with st.beta_expander("Mostrar Gráfico de Evolução da Banca"):
+with st.expander("Mostrar Gráfico de Evolução da Banca"):  # Usar o novo método st.expander
     # Criando um gráfico simples para ilustrar a evolução da banca
     fig, ax = plt.subplots(figsize=(6, 4))  # Reduzir o tamanho do gráfico
     x = [0, 1, 2, 3, 4]

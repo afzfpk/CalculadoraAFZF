@@ -55,16 +55,17 @@ else:
 
 # Gráfico de Evolução da Banca (Simulação)
 st.markdown("### 4. Gráfico de Evolução da Banca")
-# Criando um gráfico simples para ilustrar a evolução da banca
-fig, ax = plt.subplots()
-x = [0, 1, 2, 3, 4]
-y = [total_banca, total_banca + valor_cor, total_banca + valor_cor * 2, total_banca + valor_cor * 3, total_banca + valor_cor * 4]
-ax.plot(x, y, label="Evolução da Banca")
-ax.set_title("Evolução da Banca após Greens")
-ax.set_xlabel("Número de Greens")
-ax.set_ylabel("Valor da Banca (€)")
-ax.legend()
-st.pyplot(fig)
+with st.beta_expander("Mostrar Gráfico de Evolução da Banca"):
+    # Criando um gráfico simples para ilustrar a evolução da banca
+    fig, ax = plt.subplots(figsize=(6, 4))  # Reduzir o tamanho do gráfico
+    x = [0, 1, 2, 3, 4]
+    y = [total_banca, total_banca + valor_cor, total_banca + valor_cor * 2, total_banca + valor_cor * 3, total_banca + valor_cor * 4]
+    ax.plot(x, y, label="Evolução da Banca", color='dodgerblue')
+    ax.set_title("Evolução da Banca após Greens")
+    ax.set_xlabel("Número de Greens")
+    ax.set_ylabel("Valor da Banca (€)")
+    ax.legend()
+    st.pyplot(fig)
 
 # Botão para Resetar os valores
 st.markdown("### 5. Ações de Interação")
@@ -85,6 +86,9 @@ st.markdown("""
 # Mensagem final de motivação
 st.markdown("### 7. Mensagem de Motivação")
 st.write("Com AFZF, as tuas apostas têm mais **estratégia** e **controlo**. Aposta com inteligência!")
+
+# Adicionando a marca AI™ e AFZF®
+st.markdown("<h5 style='color:#9c27b0;'>Config com AI™ by AFZF®</h5>", unsafe_allow_html=True)
 
 # Personalização do Layout: Mudando a cor de fundo e fontes
 st.markdown("""

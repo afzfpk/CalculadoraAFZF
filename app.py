@@ -68,8 +68,11 @@ st.pyplot(fig)
 
 # Botão para Resetar
 st.markdown("### 5. Ações de Interação")
-if st.button("Resetar Valores"):
-    st.experimental_rerun()  # Reseta o app e volta ao estado inicial
+reset = st.button("Resetar Valores")
+if reset:
+    # Limpar todas as variáveis inseridas pelo usuário
+    st.experimental_set_query_params()  # Limpa os valores da query params na URL
+    st.write("Valores resetados. Recarregue a página para começar novamente.")  # Informação ao usuário
 
 # Regras de gestão de banca
 st.markdown("### 6. Regras do AFZF")

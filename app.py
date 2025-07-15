@@ -24,6 +24,13 @@ total_banca = st.number_input("Valor total da tua banca (€):", min_value=0.0, 
 if total_banca <= 0:
     st.warning("O valor da banca deve ser maior que 0. Por favor, insira um valor válido.")
 
+# Definindo a Meta de Lucro
+meta_lucro = st.number_input("Meta de Lucro (€):", min_value=0.0, value=50.0, step=0.01)
+
+# Verificação para garantir que a meta de lucro seja positiva
+if meta_lucro <= 0:
+    st.warning("A meta de lucro deve ser maior que 0. Por favor, insira uma meta válida.")
+
 # Cálculos automáticos para COR e Empate
 valor_cor = total_banca * 0.03  # 3% da banca para COR
 valor_empate = valor_cor * 0.10  # 10% do valor da COR para Empate
@@ -35,11 +42,9 @@ st.markdown(f"**Valor para Empate (€):** €{valor_empate:.2f}")
 
 # Seção de Stop Win e Stop Loss
 st.markdown("### 3. Cálculo de Stop Win e Stop Loss")
-meta_lucro = st.number_input("Meta de Lucro (€):", min_value=0.0, value=50.0, step=0.01)
-
-# Agora, o Stop Win será igual à meta de lucro
+# O Stop Win será igual à meta de lucro
 stop_win = meta_lucro  # O Stop Win deve ser o valor que o usuário define como objetivo de lucro
-stop_loss = total_banca * 0.18  # O Stop Loss permanece como 18% da banca, mas pode ser ajustado conforme necessário
+stop_loss = total_banca * 0.18  # O Stop Loss permanece como 18% da banca
 
 st.markdown(f"**Stop WIN (Meta de Lucro):** + €{stop_win:.2f}")
 st.markdown(f"**Stop LOSS:** - €{stop_loss:.2f}")
@@ -93,6 +98,13 @@ st.write("Com AFZF, as tuas apostas têm mais **estratégia** e **controlo**. Ap
 
 # Adicionando a marca AI™ e AFZF®
 st.markdown("<h5 style='color:#9c27b0;'>Config com AI™ by AFZF®</h5>", unsafe_allow_html=True)
+
+# Links úteis para o usuário
+st.markdown("""
+    ### Links úteis:
+    - [Gestão de Banca Responsável](https://www.somesite.com)
+    - [Apostas Responsáveis](https://www.anotherlink.com)
+""")
 
 # Personalização do Layout: Mudando a cor de fundo e fontes
 st.markdown("""

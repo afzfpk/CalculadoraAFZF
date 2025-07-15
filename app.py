@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # Título principal com a identidade AFZF
-st.title("Calculadora de Gestão de Banca - AFZF")
+st.title("Calculadora de Gestão de Banca - **AFZF**")
 
 # Subtítulo explicativo
 st.subheader("Gerencia a tua banca de apostas de forma inteligente e estratégica!")

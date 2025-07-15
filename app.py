@@ -20,6 +20,10 @@ st.markdown("""
 st.markdown("### 1. Defina o valor da sua banca")
 total_banca = st.number_input("Valor total da tua banca (€):", min_value=0.0, value=200.0, step=0.01, format="%.2f")
 
+# Verificação para garantir que o valor da banca seja positivo
+if total_banca <= 0:
+    st.warning("O valor da banca deve ser maior que 0. Por favor, insira um valor válido.")
+
 # Cálculos automáticos para COR e Empate
 valor_cor = total_banca * 0.03  # 3% da banca para COR
 valor_empate = valor_cor * 0.10  # 10% do valor da COR para Empate

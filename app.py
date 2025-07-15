@@ -2,7 +2,7 @@ import streamlit as st
 import matplotlib.pyplot as plt
 
 # Título principal com a identidade AFZF
-st.title("Calculadora de Gestão de Banca - **AFZF**")
+st.title("Calculadora de Gestão de Banca - AFZF")
 
 # Subtítulo explicativo
 st.subheader("Gerencia a tua banca de apostas de forma inteligente e estratégica!")
@@ -66,13 +66,12 @@ ax.set_ylabel("Valor da Banca (€)")
 ax.legend()
 st.pyplot(fig)
 
-# Botão para Resetar
+# Botão para Resetar (sem usar query params)
 st.markdown("### 5. Ações de Interação")
 reset = st.button("Resetar Valores")
 if reset:
-    # Limpar todas as variáveis inseridas pelo usuário
-    st.experimental_set_query_params()  # Limpa os valores da query params na URL
-    st.write("Valores resetados. Recarregue a página para começar novamente.")  # Informação ao usuário
+    # Limpar os campos manualmente
+    st.experimental_rerun()  # Força a execução de um novo "run" para resetar os valores
 
 # Regras de gestão de banca
 st.markdown("### 6. Regras do AFZF")
